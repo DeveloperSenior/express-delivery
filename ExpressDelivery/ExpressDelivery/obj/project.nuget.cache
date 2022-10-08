@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "4amz+58CMLc924qEmA1OQgh18xIu7FgCZ/Aer6CRMH0pJrJynr72zOpIPiE8/iXfXaIxBJ39WJzkHuc4Ke0TGw==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\git\\express-delivery\\ExpressDelivery\\ExpressDelivery\\ExpressDelivery.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andres\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
