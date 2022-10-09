@@ -1,12 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "Fda3h892z+K/X6ZVQJhkzTGGkxYjH50ZmHXmTxaxWwIUoqysZQorDgNXPZjq+0BvDxntBWP06lB9vuhdKDFxiw==",
+  "dgSpecHash": "fjPU1pi0P3f5ziJFqTgQC2JJWSfMb4fqJy9QWdmzCHV+BNQbSn3KnMYgxD0ai4md62kgWQENbSK1yCvgSjCftA==",
   "success": true,
   "projectFilePath": "C:\\dev\\git\\express-delivery\\ExpressDelivery\\ExpressDelivery.iOS\\ExpressDelivery.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andres\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Andres\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.5\\xamarin.communitytoolkit.2.0.5.nupkg.sha512",
     "C:\\Users\\Andres\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\Andres\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2515 to 5.0.0.2196. Reference the package directly from the project to select a different version. \r\n ExpressDelivery.iOS -> ExpressDelivery -> Xamarin.Forms (>= 5.0.0.2515) \r\n ExpressDelivery.iOS -> Xamarin.Forms (>= 5.0.0.2196)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

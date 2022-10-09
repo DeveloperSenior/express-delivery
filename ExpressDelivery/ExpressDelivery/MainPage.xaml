@@ -1,24 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExpressDelivery.MainPage">
+             xmlns:vm="clr-namespace:ExpressDelivery.ViewModels"
+             x:Class="ExpressDelivery.Views.MainPage"
+             Title="{Binding User.Address}">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ContentPage.BindingContext>
+        <vm:MainViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="*, 2*, Auto">
+        <BoxView Grid.RowSpan="3">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
+                        <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <Grid>
+            <Path Data="M0,0H375V262.033s-9.025,4.813-55.426-10.71-70.141-83.047-130.3-83.22-83.544,67.7-130.893,83.22S0,262.033,0,262.033Z" 
+                  Aspect="Fill" Fill="#ffbe00"/>
+
+            <SearchBar Placeholder="¿Que quieres pedir hoy?" 
+                        x:Name="searchBar"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="StartAndExpand"
+                        Margin="25"
+                        FontSize="18"
+                       />
+        </Grid>
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,-130,0,0" Spacing="30">
+
+
+                <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
+                <Ellipse Stroke="white" StrokeThickness="2" Aspect="Fill">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStopCollection>
+                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
+                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Image x:Name="BannerImg"  Source="logo.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+
+            <Label Text="Pet Shop!" TextColor="White" FontSize="45" FontAttributes="Bold" HorizontalOptions="Center" />
+
+
+        </StackLayout>
+    </Grid>
+
 
 </ContentPage>

@@ -10,7 +10,7 @@ namespace ExpressDelivery
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.Menu();
         }
 
         protected override void OnStart()
