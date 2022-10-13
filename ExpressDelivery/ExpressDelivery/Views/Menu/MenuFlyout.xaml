@@ -3,13 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpressDelivery.Views.MenuFlyout"
              Title="Flyout">
+    <Grid >
+    <BoxView Grid.RowSpan="3">
+        <BoxView.Background>
+            <LinearGradientBrush>
+                <GradientStopCollection>
+                    <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                    <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet2}" Offset="2"/>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </BoxView.Background>
+    </BoxView>
     <StackLayout>
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+                <Grid BackgroundColor="{DynamicResource NavigationBarColor}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
@@ -25,7 +37,7 @@
               Grid.Column="1"
               Grid.Row="2"
               Text="AppName"
-              Style="{DynamicResource SubtitleStyle}"/>
+              TextColor="{DynamicResource SecondaryColor}"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
@@ -35,11 +47,13 @@
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
-                    FontSize="24"/>
+                    FontSize="24"
+                    TextColor="{DynamicResource SecondaryColor}"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
   </StackLayout>
+    </Grid>
 </ContentPage>
