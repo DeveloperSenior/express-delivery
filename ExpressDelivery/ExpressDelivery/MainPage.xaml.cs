@@ -16,13 +16,22 @@ namespace ExpressDelivery.Views
         public MainPage()
         {
             InitializeComponent();
-            Task.Run(RotateImage);
         }
 
-        private async void RotateImage()
+        private void CarouselPositionChanged(object sender, PositionChangedEventArgs e)
         {
+            var carousel = sender as CarouselView;
+            var views = carousel.VisibleViews;
 
-                await BannerImg.RelRotateTo(360, 10000, Easing.SpringIn);
+            if (views.Count > 0)
+            {
+                foreach (var view in views)
+                {
+                    var img = view.FindByName<Image>("CategoryImg");
+                    ViewExtensions.CancelAnimations(img);
+                    //Task.Run(async () => await img.RelRotateTo(360, 5000, Easing.BounceOut));
+                }
+            }
         }
 
     }

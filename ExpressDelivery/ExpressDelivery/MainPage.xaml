@@ -16,6 +16,7 @@
                     <GradientStopCollection>
                         <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
                         <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                        <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet2}" Offset="2"/>
                     </GradientStopCollection>
                 </LinearGradientBrush>
             </BoxView.Background>
@@ -23,7 +24,7 @@
 
         <Grid>
             <Path Data="M0,0H375V262.033s-9.025,4.813-55.426-10.71-70.141-83.047-130.3-83.22-83.544,67.7-130.893,83.22S0,262.033,0,262.033Z" 
-                  Aspect="Fill" Fill="#ffbe00"/>
+                  Aspect="Fill" Fill="#301B3F"/>
 
             <SearchBar Placeholder="¿Que quieres pedir hoy?" 
                         x:Name="searchBar"
@@ -31,30 +32,59 @@
                         VerticalOptions="StartAndExpand"
                         Margin="25"
                         FontSize="18"
+                        TextColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        PlaceholderColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        CancelButtonColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        
                        />
         </Grid>
-        <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,-130,0,0" Spacing="30">
+        <CarouselView Grid.Row="1" ItemsSource="{Binding Categories}"  Margin="0,-130,0,0" PositionChanged="CarouselPositionChanged">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" SnapPointsType="MandatorySingle" SnapPointsAlignment="Center" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate >
+                <DataTemplate>
+                    <StackLayout  HorizontalOptions="Center" Spacing="30" >
+                        <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
+                            <Ellipse Stroke="{DynamicResource GradientBoxViewColorOffSet2}" StrokeThickness="2" Aspect="Fill">
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
+                                            <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                                            <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet2}" Offset="2"/>
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Image x:Name="CategoryImg" Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                        <Label Text="{Binding Name}" Opacity="0.5" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="45" FontAttributes="Bold" HorizontalOptions="Center" />
 
+                        <StackLayout Grid.Row="2" Margin="25,0,0,25" Spacing="10">
+                            <Label Text="Productos destacados" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" Opacity="0.5" FontSize="14"/>
+                            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding RelevantItems}" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
+                                                <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
+                                                <Image Source="{Binding Image}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
+                                                    <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />
+                                                    <Label Text="{Binding Description}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="10" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
 
-                <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
-                <Ellipse Stroke="white" StrokeThickness="2" Aspect="Fill">
-                    <Ellipse.Fill>
-                        <LinearGradientBrush>
-                            <GradientStopCollection>
-                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet0}" Offset="0"/>
-                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
-                            </GradientStopCollection>
-                        </LinearGradientBrush>
-                    </Ellipse.Fill>
-                </Ellipse>
-                <Image x:Name="BannerImg"  Source="logo.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </Grid>
-
-
-            <Label Text="Pet Shop!" TextColor="White" FontSize="45" FontAttributes="Bold" HorizontalOptions="Center" />
-
-
-        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </Grid>
 
 

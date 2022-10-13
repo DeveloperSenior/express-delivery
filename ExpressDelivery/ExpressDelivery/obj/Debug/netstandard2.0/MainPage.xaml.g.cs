@@ -23,14 +23,10 @@ namespace ExpressDelivery.Views {
         private global::Xamarin.Forms.SearchBar searchBar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Image BannerImg;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
             vm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ExpressDelivery.ViewModels.MainViewModel>(this, "vm");
             searchBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.SearchBar>(this, "searchBar");
-            BannerImg = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "BannerImg");
         }
     }
 }

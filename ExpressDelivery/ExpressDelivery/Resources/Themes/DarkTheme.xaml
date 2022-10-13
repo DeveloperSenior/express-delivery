@@ -2,17 +2,18 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CyberMovies.Resources.Themes.DarkTheme">
-    <Color x:Key="PageBackgroundColor">Black</Color>
-    <Color x:Key="NavigationBarColor">#ffbe00</Color>
-    <Color x:Key="PrimaryColor">Teal</Color>
-    <Color x:Key="SecondaryColor">#161616</Color>
-    <Color x:Key="PrimaryTextColor">#161616</Color>
-    <Color x:Key="SecondaryTextColor">#161616</Color>
+    <Color x:Key="PageBackgroundColor">#151515</Color>
+    <Color x:Key="NavigationBarColor">#301B3F</Color>
+    <Color x:Key="PrimaryColor">#3C415C</Color>
+    <Color x:Key="SecondaryColor">#B4A5A5</Color>
+    <Color x:Key="PrimaryTextColor">#B4A5A5</Color>
+    <Color x:Key="SecondaryTextColor">#E94560</Color>
     <Color x:Key="TertiaryTextColor">#161616</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
     <Color x:Key="BannerColor">#ffbe00</Color>
-    <Color x:Key="GradientBoxViewColorOffSet0"> #161616</Color>
-    <Color x:Key="GradientBoxViewColorOffSet1">#30343F</Color>
+    <Color x:Key="GradientBoxViewColorOffSet0">#151515</Color>
+    <Color x:Key="GradientBoxViewColorOffSet1">#3C415C</Color>
+    <Color x:Key="GradientBoxViewColorOffSet2">#B4A5A5</Color>
     <Color x:Key="ShadowEffectColor">Gray</Color>
 
 </ResourceDictionary>

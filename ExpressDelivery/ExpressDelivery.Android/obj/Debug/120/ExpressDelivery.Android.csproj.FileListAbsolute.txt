@@ -623,7 +623,6 @@ C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\12
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
-C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\logo.png
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\search.png
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\mipmap-anydpi-v26\logo.png
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\mipmap-anydpi-v26\search.png
@@ -663,3 +662,8 @@ C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\12
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\android\src\crc64515ee83f00766c60\VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener.java
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\android\src\crc645b8ccbad6ecd7dce\SideMenuViewRenderer.java
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\banner.jpg
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\android\src\crc64e1e67abe28f843d0\SearchBarIconColorCustomRenderer.java
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\petshop.png
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\drink.png
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\fastfood.png
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\pilldrugs.png
