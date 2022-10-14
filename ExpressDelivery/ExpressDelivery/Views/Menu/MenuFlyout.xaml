@@ -4,7 +4,7 @@
              x:Class="ExpressDelivery.Views.MenuFlyout"
              Title="Flyout">
     <Grid >
-    <BoxView Grid.RowSpan="3">
+    <BoxView Grid.RowSpan="1">
         <BoxView.Background>
             <LinearGradientBrush>
                 <GradientStopCollection>
@@ -21,25 +21,30 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-                <Grid BackgroundColor="{DynamicResource NavigationBarColor}">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-          </Grid.RowDefinitions>
-          <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              Text="AppName"
-              TextColor="{DynamicResource SecondaryColor}"/>
-        </Grid>
-      </ListView.Header>
+                    
+                    <Grid BackgroundColor="{DynamicResource NavigationBarColor}">
+                      <StackLayout>
+                            <Grid  HeightRequest="180" WidthRequest="180" HorizontalOptions="Center">
+                                <Ellipse Stroke="#B4A5A5" StrokeThickness="2" Aspect="Fill">
+                                </Ellipse>
+                                <Image x:Name="ProfileImg" Source="profile.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+                            <Label
+                                  FontSize="24"
+                                  Text="{Binding User.Name}"
+                                  TextColor="{DynamicResource SecondaryColor}"
+                                 HorizontalOptions="Center"
+                                Margin="5"/>            
+                            <Label
+                                  FontSize="14"
+                                  Text="{Binding User.Email}"
+                                  TextColor="{DynamicResource SecondaryColor}"
+                                HorizontalOptions="Center"
+                                Margin="10"/>
+                        </StackLayout>
+                    </Grid>
+                    
+                </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

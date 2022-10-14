@@ -3,6 +3,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ExpressDelivery.ViewModels"
+             xmlns:local="clr-namespace:ExpressDelivery.Views"
              x:Class="ExpressDelivery.Views.MainPage"
              Title="{Binding User.Address}">
 
@@ -38,7 +39,7 @@
                         
                        />
         </Grid>
-        <CarouselView Grid.Row="1" ItemsSource="{Binding Categories}"  Margin="0,-130,0,0" PositionChanged="CarouselPositionChanged">
+        <CarouselView Grid.Row="1" ItemsSource="{Binding Categories}"  Margin="0,-130,0,0" PositionChanged="OnCarouselPositionChanged" CurrentItemChanged="OnCurrentItemChanged">
             <CarouselView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" SnapPointsType="MandatorySingle" SnapPointsAlignment="Center" />
             </CarouselView.ItemsLayout>
@@ -60,32 +61,29 @@
                             <Image x:Name="CategoryImg" Source="{Binding ImageSource}" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </Grid>
                         <Label Text="{Binding Name}" Opacity="0.5" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="45" FontAttributes="Bold" HorizontalOptions="Center" />
-
-                        <StackLayout Grid.Row="2" Margin="25,0,0,25" Spacing="10">
-                            <Label Text="Productos destacados" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" Opacity="0.5" FontSize="14"/>
-                            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding RelevantItems}" Spacing="30">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
-                                                <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
-                                                <Image Source="{Binding Image}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                                <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
-                                                    <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />
-                                                    <Label Text="{Binding Description}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="10" />
-                                                </StackLayout>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
-                                </StackLayout>
-                            </ScrollView>
-                        </StackLayout>
-
                     </StackLayout>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+        <StackLayout Grid.Row="2" Margin="25,-220,0,25" Spacing="10">
+            <Label Text="Productos destacados" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" Opacity="0.5" FontSize="14"/>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                <StackLayout Orientation="Horizontal" x:Name="listRelevantItemView" Spacing="30">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
+                                <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
+                                <Image Source="{Binding Image}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
+                                    <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="10" />
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </Grid>
-
 
 </ContentPage>

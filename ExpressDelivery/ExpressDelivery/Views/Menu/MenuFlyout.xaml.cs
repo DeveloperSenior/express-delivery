@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpressDelivery.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace ExpressDelivery.Views
     public partial class MenuFlyout : ContentPage
     {
         public ListView ListView;
+        public UserSession User;
 
         public MenuFlyout()
         {
@@ -28,6 +30,7 @@ namespace ExpressDelivery.Views
         private class MenuFlyoutViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<MenuFlyoutMenuItem> MenuItems { get; set; }
+            public UserSession User { get; set; }
 
             public MenuFlyoutViewModel()
             {
@@ -39,6 +42,7 @@ namespace ExpressDelivery.Views
                     new MenuFlyoutMenuItem { Id = 3, Title = "Page 4" },
                     new MenuFlyoutMenuItem { Id = 4, Title = "Page 5" },
                 });
+                User = new ViewModels.MainViewModel().User;
             }
 
             #region INotifyPropertyChanged Implementation

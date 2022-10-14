@@ -667,3 +667,4 @@ C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\12
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\drink.png
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\fastfood.png
 C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\pilldrugs.png
+C:\dev\git\express-delivery\ExpressDelivery\ExpressDelivery.Android\obj\Debug\120\res\drawable\profile.png

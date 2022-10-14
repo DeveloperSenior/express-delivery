@@ -16,9 +16,14 @@ namespace ExpressDelivery.Views
         public MainPage()
         {
             InitializeComponent();
+            IEnumerable<Item> items = new Item[]{};
+            BindableLayout.SetItemsSource(listRelevantItemView, items);
+
         }
 
-        private void CarouselPositionChanged(object sender, PositionChangedEventArgs e)
+        public List<Item> RelevantItemsData { get; set; }
+
+        private void OnCarouselPositionChanged(object sender, PositionChangedEventArgs e)
         {
             var carousel = sender as CarouselView;
             var views = carousel.VisibleViews;
@@ -32,6 +37,14 @@ namespace ExpressDelivery.Views
                     //Task.Run(async () => await img.RelRotateTo(360, 5000, Easing.BounceOut));
                 }
             }
+        }
+
+        private void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
+        {
+            Category category = e.CurrentItem as Category;
+            RelevantItemsData = category.RelevantItems;
+            BindableLayout.SetItemsSource(listRelevantItemView, RelevantItemsData);
+
         }
 
     }
