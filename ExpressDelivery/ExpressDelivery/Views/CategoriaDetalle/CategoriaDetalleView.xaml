@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpressDelivery.Views.CategoriaDetalleView">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid RowDefinitions="*, 2*, Auto">
+                <BoxView Grid.RowSpan="3">
+                    <BoxView.Background>
+                        <LinearGradientBrush>
+                            <GradientStopCollection>
+                                <GradientStop Color="{DynamicResource Key= GradientBoxViewColorOffSet0}" Offset="0"/>
+                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet1}" Offset="1"/>
+                                <GradientStop Color="{DynamicResource GradientBoxViewColorOffSet2}" Offset="2"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+                <StackLayout>
+                    <Grid>
+                        <Path Data="M0,0H375V262.033s-9.025,4.813-55.426-10.71-70.141-83.047-130.3-83.22-83.544,67.7-130.893,83.22S0,262.033,0,262.033Z" 
+                  Aspect="Fill" Fill="#301B3F"/>
+
+                        <SearchBar Placeholder="Producto a seleccionar" 
+                        x:Name="searchBar"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="StartAndExpand"
+                        Margin="25"
+                        FontSize="18"
+                        TextColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        PlaceholderColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        CancelButtonColor="{DynamicResource GradientBoxViewColorOffSet2}"
+                        
+                       />
+
+                    </Grid>
+
+                    <StackLayout Grid.Row="2" Margin="20,-200,20,-700" Spacing="10">
+                        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Default">
+                            <StackLayout Orientation="Vertical" x:Name="listRelevantItemView" Spacing="70">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
+                                            <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
+                                            <Image Source="{Binding Image}" WidthRequest="200" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
+                                                <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />
+                                                <Label Text="{Binding Description}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="10" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
