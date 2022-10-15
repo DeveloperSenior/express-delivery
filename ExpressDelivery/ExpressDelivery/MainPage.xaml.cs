@@ -21,6 +21,15 @@ namespace ExpressDelivery.Views
             InitializeComponent();
             IEnumerable<Item> items = new Item[]{};
             BindableLayout.SetItemsSource(listRelevantItemView, items);
+
+            NavigateCommand = new Xamarin.Forms.Command(async (selectItem) => {
+                var category = selectItem as Category;
+                var page = (Page)Activator.CreateInstance(typeof(CategoriaDetalleView));
+                page.Title = "Detalle "+ category.Name;
+                /*Detail = new NavigationPage(page);*/
+                await Navigation.PushAsync(page);
+
+            });
         }
 
         public List<Item> RelevantItemsData { get; set; }

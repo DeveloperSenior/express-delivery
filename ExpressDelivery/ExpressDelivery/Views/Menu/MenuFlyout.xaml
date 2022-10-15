@@ -65,7 +65,7 @@
       </ListView.ItemTemplate>
     </ListView>
             <StackLayout  IsVisible="{Binding IsSession}">
-                <Button CornerRadius="10" Margin="10,10,10,10" VerticalOptions="EndAndExpand" HorizontalOptions="Center" BackgroundColor="{DynamicResource DangerColor}" BorderColor="{DynamicResource SecondaryColor}" TextColor="{DynamicResource PrimaryColor}" Text="Cerrar sesión"></Button>
+                <Button CornerRadius="10" Margin="10,10,10,10" VerticalOptions="EndAndExpand" HorizontalOptions="Center" BackgroundColor="{DynamicResource DangerColor}"  TextColor="White" Text="Cerrar sesión"></Button>
                 
             </StackLayout>
         </StackLayout>

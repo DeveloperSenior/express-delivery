@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:ExpressDelivery.ViewModels"
              xmlns:views="clr-namespace:ExpressDelivery.Views"
              x:Class="ExpressDelivery.Views.MainPage"
+             x:Name="currentPage"
              Title="{Binding User.Address}">
 
     <ContentPage.BindingContext>
@@ -46,6 +47,9 @@
             <CarouselView.ItemTemplate >
                 <DataTemplate>
                     <StackLayout  HorizontalOptions="Center" Spacing="30" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateCommand,Source={x:Reference currentPage}}" CommandParameter="{Binding .}"/>
+                        </StackLayout.GestureRecognizers>
                         <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
                             <Ellipse Stroke="{DynamicResource GradientBoxViewColorOffSet2}" StrokeThickness="2" Aspect="Fill">
                                 <Ellipse.Fill>

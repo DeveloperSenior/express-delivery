@@ -1,19 +1,23 @@
 ﻿using ExpressDelivery.Models;
+using ExpressDelivery.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ExpressDelivery.ViewModels
 {
     
     public class MainViewModel: BaseViewModel
     {
-
+        
         public MainViewModel()
         {
-            User = new UserSession
+
+                User = new UserSession
             {
                 ID = "101312122321",
                 Name = "Guest Consumidor",
