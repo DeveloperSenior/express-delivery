@@ -30,12 +30,6 @@ namespace ExpressDelivery.Views
             InitializeComponent();
             
             ListView = MenuItemsListView;
-            NavigateCommand = new Command<Type>(
-                        async (Type pageType) =>
-                        {
-                            Page page = (Page)Activator.CreateInstance(pageType);
-                            await Navigation.PushAsync(page);
-                        });
             User = new ViewModels.MainViewModel().User;
             IsSession = (User?.ID != null);
             IsNotSession = !IsSession;

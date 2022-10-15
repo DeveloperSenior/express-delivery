@@ -6,19 +6,21 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ExpressDelivery.Views
 {
     public partial class MainPage : ContentPage
     {
+        public ICommand NavigateCommand { get; private set; }
+
 
         public MainPage()
         {
             InitializeComponent();
             IEnumerable<Item> items = new Item[]{};
             BindableLayout.SetItemsSource(listRelevantItemView, items);
-
         }
 
         public List<Item> RelevantItemsData { get; set; }

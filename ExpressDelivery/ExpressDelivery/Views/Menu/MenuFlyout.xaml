@@ -53,15 +53,11 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Padding="15,10" HorizontalOptions="Center">
-                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                     Text="{Binding Title}"
+                    FontSize="24"
                     IsVisible="{Binding IsShow}"
-                    CornerRadius="10" Margin="10,10,10,10"
-                    BackgroundColor="{DynamicResource PrimaryColor}" 
-                    BorderColor="{DynamicResource SecondaryColor}" 
-                    TextColor="{DynamicResource SecondaryColor}"
-                    Command="{Binding NavigateCommand}"
-                    CommandParameter="{x:Type views:CategoriaDetalleView}"/>
+                    TextColor="{DynamicResource SecondaryColor}"/>
 
                             </StackLayout>
           </ViewCell>

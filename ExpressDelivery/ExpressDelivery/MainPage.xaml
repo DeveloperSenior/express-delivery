@@ -3,7 +3,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ExpressDelivery.ViewModels"
-             xmlns:local="clr-namespace:ExpressDelivery.Views"
+             xmlns:views="clr-namespace:ExpressDelivery.Views"
              x:Class="ExpressDelivery.Views.MainPage"
              Title="{Binding User.Address}">
 

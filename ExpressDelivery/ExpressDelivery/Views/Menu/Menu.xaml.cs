@@ -15,7 +15,7 @@ namespace ExpressDelivery.Views
         public Menu()
         {
             InitializeComponent();
-            //FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
+            FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -27,7 +27,8 @@ namespace ExpressDelivery.Views
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(page);
+            /*Detail = new NavigationPage(page);*/
+             Navigation.PushAsync(page);
             IsPresented = false;
 
             FlyoutPage.ListView.SelectedItem = null;
