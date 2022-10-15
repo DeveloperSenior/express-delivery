@@ -10,11 +10,12 @@ namespace ExpressDelivery.Views
     {
         public MenuFlyoutMenuItem()
         {
-            TargetType = typeof(MenuFlyoutMenuItem);
         }
         public int Id { get; set; }
         public string Title { get; set; }
+        public string CommandPageView { get; set; }
 
+        public bool IsShow { get; set; }
         public Type TargetType { get; set; }
     }
 }

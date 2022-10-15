@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpressDelivery.Views.MenuFlyout"
              Title="Flyout">
-    <Grid >
+    <Grid>
     <BoxView Grid.RowSpan="1">
         <BoxView.Background>
             <LinearGradientBrush>
@@ -23,42 +23,51 @@
       <ListView.Header>
                     
                     <Grid BackgroundColor="{DynamicResource NavigationBarColor}">
-                      <StackLayout>
+                        <StackLayout IsVisible="{Binding IsSession}">
                             <Grid  HeightRequest="180" WidthRequest="180" HorizontalOptions="Center">
                                 <Ellipse Stroke="#B4A5A5" StrokeThickness="2" Aspect="Fill">
                                 </Ellipse>
                                 <Image x:Name="ProfileImg" Source="profile.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        </Grid>
+                            </Grid>
                             <Label
                                   FontSize="24"
                                   Text="{Binding User.Name}"
                                   TextColor="{DynamicResource SecondaryColor}"
                                  HorizontalOptions="Center"
-                                Margin="5"/>            
+                                Margin="5"/>
                             <Label
-                                  FontSize="14"
+                                  FontSize="18"
                                   Text="{Binding User.Email}"
                                   TextColor="{DynamicResource SecondaryColor}"
                                 HorizontalOptions="Center"
                                 Margin="10"/>
                         </StackLayout>
+
                     </Grid>
                     
                 </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    FontSize="24"
-                    TextColor="{DynamicResource SecondaryColor}"/>
+            <StackLayout Padding="15,10" HorizontalOptions="Center">
+                                <Button VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                    Text="{Binding Title}"
+                    IsVisible="{Binding IsShow}"
+                    CornerRadius="10" Margin="10,10,10,10"
+                    BackgroundColor="{DynamicResource PrimaryColor}" 
+                    BorderColor="{DynamicResource SecondaryColor}" 
+                    TextColor="{DynamicResource SecondaryColor}"
+                    Command="{Binding NavigateCommand}"/>
+                    <!--CommandParameter="{x:Type views:CommandPageView} "-->
+                    
             </StackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-  </StackLayout>
+            <StackLayout  IsVisible="{Binding IsSession}">
+                <Button CornerRadius="10" Margin="10,10,10,10" VerticalOptions="EndAndExpand" HorizontalOptions="Center" BackgroundColor="{DynamicResource DangerColor}" BorderColor="{DynamicResource SecondaryColor}" TextColor="{DynamicResource PrimaryColor}" Text="Cerrar sesión"></Button>
+            </StackLayout>
+        </StackLayout>
     </Grid>
 </ContentPage>

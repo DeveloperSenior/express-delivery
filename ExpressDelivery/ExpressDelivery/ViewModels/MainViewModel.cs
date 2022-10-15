@@ -10,6 +10,7 @@ namespace ExpressDelivery.ViewModels
     
     public class MainViewModel: BaseViewModel
     {
+
         public MainViewModel()
         {
             User = new UserSession

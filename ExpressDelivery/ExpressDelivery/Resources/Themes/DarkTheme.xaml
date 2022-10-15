@@ -15,5 +15,6 @@
     <Color x:Key="GradientBoxViewColorOffSet1">#3C415C</Color>
     <Color x:Key="GradientBoxViewColorOffSet2">#B4A5A5</Color>
     <Color x:Key="ShadowEffectColor">Gray</Color>
+    <Color x:Key="DangerColor">#E94560</Color>
 
 </ResourceDictionary>

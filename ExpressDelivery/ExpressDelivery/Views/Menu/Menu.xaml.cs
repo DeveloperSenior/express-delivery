@@ -15,7 +15,7 @@ namespace ExpressDelivery.Views
         public Menu()
         {
             InitializeComponent();
-            FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
+            //FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
