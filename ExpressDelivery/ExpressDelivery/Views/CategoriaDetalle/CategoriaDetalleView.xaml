@@ -15,14 +15,13 @@
                     </LinearGradientBrush>
                 </BoxView.Background>
             </BoxView>
-            <StackLayout>
+            
                 <Grid>
 
                     <SearchBar Placeholder="Producto a seleccionar" 
                         x:Name="searchBar"
                         HorizontalOptions="Fill"
                         VerticalOptions="StartAndExpand"
-                        Margin="25"
                         FontSize="18"
                         TextColor="{DynamicResource GradientBoxViewColorOffSet2}"
                         PlaceholderColor="{DynamicResource GradientBoxViewColorOffSet2}"
@@ -32,8 +31,8 @@
 
                 </Grid>
 
-                <StackLayout Grid.Row="2" Margin="20,-200,20,-700" Spacing="10">
-                    <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Default">
+                <StackLayout Grid.Row="2"  Margin="0,0,0,0">
+                <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never">
                         <StackLayout Orientation="Vertical" x:Name="listRelevantItemView" Spacing="70">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
@@ -49,7 +48,6 @@
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
                     </ScrollView>
-                </StackLayout>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

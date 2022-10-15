@@ -33,12 +33,20 @@ namespace ExpressDelivery.Views
 
                 new Item()
                        {
-                           Id = 1, Name="Corona", Image = "Corona.png", Description= "", Price=5000
+                           Id = 1, Name="Corona", Image = "Corona.png", Description= "Nada mejor para calmar la sed", Price=5000
                 },
 
                  new Item()
                        {
-                           Id = 1, Name="Raton Volador", Image = "Azetaminofen.png", Description= "Para tu mascota juguetona este raton es ideal", Price=5000
+                           Id = 1, Name="Felix", Image = "Gato1.png", Description= "Para tu mascota la comida ideal", Price=5000
+
+                },
+
+                new Item()
+                {
+
+                           Id = 1, Name="Dolex Gripa", Image = "DolexGripa.png", Description= "La mejor solucón para tu nariz", Price=5000
+
                 }
 
 
