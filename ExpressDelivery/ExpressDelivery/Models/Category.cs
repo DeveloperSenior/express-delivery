@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace ExpressDelivery.Models
@@ -10,7 +11,7 @@ namespace ExpressDelivery.Models
         public string Name { get; set; }
         public string ImageSource { get; set; }
 
-        public List<Item> RelevantItems { get; set; }
+        public ObservableCollection<Item> RelevantItems { get; set; }
 
     }
 }

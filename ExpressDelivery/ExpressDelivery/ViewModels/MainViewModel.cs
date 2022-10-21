@@ -1,7 +1,10 @@
 ﻿using ExpressDelivery.Models;
 using ExpressDelivery.Views;
+using Firebase.Database;
+using Firebase.Database.Query;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,11 +16,13 @@ namespace ExpressDelivery.ViewModels
     
     public class MainViewModel: BaseViewModel
     {
+        const string RESOURCE_FB = "https://expressdelivery-e9ad9-default-rtdb.firebaseio.com/";
+        FirebaseClient firebaseClient = new FirebaseClient(RESOURCE_FB);
         
         public MainViewModel()
         {
 
-                User = new UserSession
+            User = new UserSession
             {
                 ID = "101312122321",
                 Name = "Guest Consumidor",
@@ -26,7 +31,9 @@ namespace ExpressDelivery.ViewModels
                 Phone = "31045312312"
             };
 
-            Categories = new List<Category>()
+
+
+            /*Categories = new List<Category>()
             {
                 new Category()
                 {
@@ -97,10 +104,21 @@ namespace ExpressDelivery.ViewModels
                    }
                 }
             };
+            Categories.ForEach((item) =>
+            {
+                firebaseClient.Child("Category").PostAsync(item);
+            });*/
+
+            firebaseClient.Child("Category").AsObservable<Category>().Subscribe((dbevent) =>
+            {
+                Categories.Add(dbevent.Object);
+            });
+
+
         }
         public UserSession User { get; set; }
 
-        public List<Category> Categories { get; set; }
+        public ObservableCollection<Category> Categories { get; set; } = new ObservableCollection<Category>();
 
 
     }
