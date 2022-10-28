@@ -18,18 +18,70 @@ namespace ExpressDelivery.ViewModels
     {
         const string RESOURCE_FB = "https://expressdelivery-e9ad9-default-rtdb.firebaseio.com/";
         FirebaseClient firebaseClient = new FirebaseClient(RESOURCE_FB);
-        
+
+        public string ID;
+        public string Name;
+        public string Adress;
+        public string Email;
+        public string Phone;
+        public string Pass;
+
+        public UserSession User { get; set; }
+
+        public string TxtID
+        {
+            get { return this.ID; }
+            set { this.ID = value; }
+        }
+        public string TxtName
+        {
+            get { return this.Name; }
+            set { this.Name = value; }
+        }
+        public string TxtAdress
+        {
+            get { return this.Adress; }
+            set { this.Adress = value; }
+        }
+        public string TxtEmail
+        {
+            get { return this.Email; }
+            set { this.Email = value; }
+        }
+        public string TxtPhone
+        {
+            get { return this.Phone; }
+            set { this.Phone = value; }
+        }
+        public string TxtPass
+        {
+            get { return this.Pass; }
+            set { this.Pass = value; }
+        }
+
+        public string IDTxt
+        {
+            get { return this.ID; }
+            set { this.ID = value; }
+        }
+
+        public string PassTxt
+        {
+            get { return this.Pass; }
+            set { this.Pass = value; }
+        }
+
         public MainViewModel()
         {
 
-            User = new UserSession
+            /*User = new UserSession
             {
                 ID = "101312122321",
                 Name = "Guest Consumidor",
                 Address = "Avenida Siempre viva 123",
                 Email = "guest@tdea.com.edu",
                 Phone = "31045312312"
-            };
+            };*/
 
 
 
@@ -116,9 +168,78 @@ namespace ExpressDelivery.ViewModels
 
 
         }
-        public UserSession User { get; set; }
+        //public UserSession User { get; set; }
 
         public ObservableCollection<Category> Categories { get; set; } = new ObservableCollection<Category>();
+
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new Command(RegisterMethod);
+            }
+        }
+
+        public ICommand SingInCommand
+        {
+            get
+            {
+                return new Command(SingInMethod);
+            }
+        }
+
+        private async void SingInMethod()
+        {
+            if (this.ID == "123" && this.Pass == "321")
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                                "Ingreso",
+                                "Bienvenido",
+                                "Aceptar");
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                            "Error",
+                            "Los datos ingresados no son correctos",
+                            "Aceptar");
+            }
+        }
+
+        private async void RegisterMethod()
+        {
+            if (string.IsNullOrEmpty(this.ID) ||
+                string.IsNullOrEmpty(this.Name) ||
+                string.IsNullOrEmpty(this.Adress) ||
+                string.IsNullOrEmpty(this.Email) ||
+                string.IsNullOrEmpty(this.Phone) ||
+                string.IsNullOrEmpty(this.Pass))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Debe ingresar todos los datos",
+                    "Aceptar");
+                return;
+            }
+
+            await Application.Current.MainPage.DisplayAlert(
+                    "Info",
+                    "El registro ha sido exitoso.",
+                    "Aceptar");
+
+            User = new UserSession
+            {
+                ID = TxtID,
+                Name = TxtName,
+                Address = TxtAdress,
+                Email = TxtEmail,
+                Phone = TxtPhone,
+                Pass = TxtPass
+            };
+        }
+
+
+
 
 
     }

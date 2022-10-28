@@ -11,5 +11,6 @@ namespace ExpressDelivery.Models
         public String Email { get; set; }
         public String Phone { get; set; }
         public String Address { get; set; }
+        public String Pass { get; set; }
     }
 }

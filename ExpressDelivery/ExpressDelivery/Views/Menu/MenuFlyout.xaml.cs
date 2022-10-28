@@ -1,5 +1,6 @@
 ﻿using ExpressDelivery.Models;
 using ExpressDelivery.ViewModels;
+using ExpressDelivery.Views.SingInSingUp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,7 +36,7 @@ namespace ExpressDelivery.Views
             IsNotSession = !IsSession;
             MenuItems = new List<MenuFlyoutMenuItem>()
                 {
-                    new MenuFlyoutMenuItem { Id = 0, Title = "Iniciar sesion",IsShow=!IsSession },
+                    new MenuFlyoutMenuItem { Id = 0, Title = "Iniciar sesion",IsShow=!IsSession, TargetType=typeof(SingInView)  },
                     new MenuFlyoutMenuItem { Id = 1, Title = "Categorias", IsShow=true },
                     new MenuFlyoutMenuItem { Id = 2, Title = "Registrar", IsShow=!IsSession }
 
