@@ -37,7 +37,6 @@
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
-                                        <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
                                         <Image Source="{Binding Image}" WidthRequest="200" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/>
                                         <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
                                             <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />

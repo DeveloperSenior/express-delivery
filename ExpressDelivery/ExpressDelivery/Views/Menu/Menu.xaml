@@ -1,16 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:ExpressDelivery.Views"
              x:Class="ExpressDelivery.Views.Menu"
-             xmlns:pages="clr-namespace:ExpressDelivery.Views">
-    <FlyoutPage.Flyout>
-        <pages:MenuFlyout x:Name="FlyoutPage" />
-    </FlyoutPage.Flyout>
-    <FlyoutPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:MainPage />
-      </x:Arguments>
-    </NavigationPage>
-  </FlyoutPage.Detail>
-</FlyoutPage>
+             BackgroundColor="{DynamicResource NavigationBarColor}"
+             >
+
+    <Shell.FlyoutHeader>
+        <views:MenuFlyout x:Name="FlyoutPage" />
+    </Shell.FlyoutHeader>
+    <FlyoutItem>
+        <ShellContent ContentTemplate="{DataTemplate views:MainPage}" />
+    </FlyoutItem>
+
+    <ShellContent Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}" />
+    <ShellContent Route="CategoriaDetalleView"
+                   ContentTemplate="{DataTemplate views:CategoriaDetalleView}" />
+    <ShellContent Route="SingInView"
+                   ContentTemplate="{DataTemplate views:SingInView}" />
+    <ShellContent Route="SingUpView"
+                   ContentTemplate="{DataTemplate views:SingUpView}" />
+
+</Shell>

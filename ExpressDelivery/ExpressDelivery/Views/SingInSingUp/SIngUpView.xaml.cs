@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ExpressDelivery.Views.SingInSingUp
+namespace ExpressDelivery.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SingUpView : ContentPage
@@ -16,11 +16,8 @@ namespace ExpressDelivery.Views.SingInSingUp
         public SingUpView()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
+            BindingContext = new SingUpViewModel();
         }
-        private async void Iniciar_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new SingInView());
-        }
+
     }
 }

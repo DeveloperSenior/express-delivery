@@ -1,6 +1,8 @@
-﻿using ExpressDelivery.ViewModels;
+﻿using ExpressDelivery.Common;
+using ExpressDelivery.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,20 +10,18 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ExpressDelivery.Views.SingInSingUp
+namespace ExpressDelivery.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [DesignTimeVisible(true)]
     public partial class SingInView : ContentPage
     {
+        
         public SingInView()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
+            BindingContext = new SingInViewModel();
         }
-        private async void SingUp_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new SingUpView());
-
-        }
+      
     }
 }

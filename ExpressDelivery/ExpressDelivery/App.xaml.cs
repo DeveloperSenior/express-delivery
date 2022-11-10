@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ExpressDelivery.Common;
+using Acr.UserDialogs;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ExpressDelivery
 {
@@ -9,8 +9,18 @@ namespace ExpressDelivery
         public App()
         {
             InitializeComponent();
+            var authService = DependencyService.Resolve<IAuth>();
+            UserDialogs.Instance.ShowLoading("Procesando");
+            if (authService.IsSignIn())
+            {
+                MainPage = new Views.Menu();
+            }
+            else
+            {
+                MainPage = new Views.SingInView();
+            }
+            UserDialogs.Instance.HideLoading();
 
-            MainPage = new NavigationPage(new Views.Menu());
         }
 
         protected override void OnStart()

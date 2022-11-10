@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "460998373897",
+    "firebase_url": "https://expressdelivery-e9ad9-default-rtdb.firebaseio.com",
+    "project_id": "expressdelivery-e9ad9",
+    "storage_bucket": "expressdelivery-e9ad9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460998373897:android:ee540f6b2f7211eba8bed8",
+        "android_client_info": {
+          "package_name": "com.tdea.expressdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460998373897-cfnj0v7j9jpgamni24kdmqi160vvntua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx29glWxy50I264VFcFBZyqTeDe8c0q-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460998373897-cfnj0v7j9jpgamni24kdmqi160vvntua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

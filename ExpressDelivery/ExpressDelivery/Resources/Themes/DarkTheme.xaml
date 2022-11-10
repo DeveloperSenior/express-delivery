@@ -10,7 +10,7 @@
     <Color x:Key="SecondaryTextColor">#E94560</Color>
     <Color x:Key="TertiaryTextColor">#161616</Color>
     <Color x:Key="TransparentColor">Transparent</Color>
-    <Color x:Key="BannerColor">#ffbe00</Color>
+    <Color x:Key="BannerColor">#B4A5A5</Color>
     <Color x:Key="GradientBoxViewColorOffSet0">#151515</Color>
     <Color x:Key="GradientBoxViewColorOffSet1">#3C415C</Color>
     <Color x:Key="GradientBoxViewColorOffSet2">#B4A5A5</Color>

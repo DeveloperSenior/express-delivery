@@ -1,36 +1,21 @@
-﻿using ExpressDelivery.Models;
-using System;
+﻿
+using ExpressDelivery.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
+using ExpressDelivery.ViewModels;
 
 namespace ExpressDelivery.Views
 {
     public partial class MainPage : ContentPage
     {
-        public ICommand NavigateCommand { get; private set; }
-
 
         public MainPage()
         {
             InitializeComponent();
             IEnumerable<Item> items = new Item[]{};
             BindableLayout.SetItemsSource(listRelevantItemView, items);
-
-            NavigateCommand = new Xamarin.Forms.Command(async (selectItem) => {
-                var category = selectItem as Category;
-                var page = (Page)Activator.CreateInstance(typeof(CategoriaDetalleView));
-                page.Title = "Detalle "+ category.Name;
-                /*Detail = new NavigationPage(page);*/
-                await Navigation.PushAsync(page);
-
-            });
+            BindingContext = new MainViewModel();
         }
 
         public ObservableCollection<Item> RelevantItemsData { get; set; }
@@ -46,7 +31,6 @@ namespace ExpressDelivery.Views
                 {
                     var img = view.FindByName<Image>("CategoryImg");
                     ViewExtensions.CancelAnimations(img);
-                    //Task.Run(async () => await img.RelRotateTo(360, 5000, Easing.BounceOut));
                 }
             }
         }
@@ -56,7 +40,6 @@ namespace ExpressDelivery.Views
             Category category = e.CurrentItem as Category;
             RelevantItemsData = category.RelevantItems;
             BindableLayout.SetItemsSource(listRelevantItemView, RelevantItemsData);
-
         }
 
     }

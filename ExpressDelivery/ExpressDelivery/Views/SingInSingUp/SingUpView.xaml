@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExpressDelivery.Views.SingInSingUp.SingUpView">
+             x:Class="ExpressDelivery.Views.SingUpView">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="ESTAS EN EL REGISTRO DE USUARIOS"
@@ -31,23 +31,22 @@
                     <Image x:Name="BannerImg" Source="https://i.ibb.co/q1QCnxR/LogoED.png" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
                 <Label Text="Registro" TextColor="White" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Margin="10"/>
-                <Entry x:Name="txtID" Placeholder="ID" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtID, Mode=TwoWay}"/>
-                <Entry x:Name="txtName" Placeholder="Nombres" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtName, Mode=TwoWay}"/>
-                <Entry x:Name="txtEmail" Placeholder="Correo electrónico" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtEmail}"/>
-                <Entry x:Name="txtPhone" Placeholder="Teléfono / celular" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtPhone}"/>
-                <Entry x:Name="txtAdress" Placeholder="Dirección" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtAdress}"/>
-                <Entry x:Name="txtPass" Placeholder="Contraseña" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding TxtPass}"/>
+                <Entry x:Name="txtName" Placeholder="Usuario" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding Username, Mode=TwoWay}"/>
+                <Entry x:Name="txtEmail" Placeholder="Correo electrónico" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding Email}"/>
+                <Entry x:Name="txtPhone" Placeholder="Teléfono / celular" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding Phone}"/>
+                <Entry x:Name="txtAdress" Placeholder="Dirección" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding Address}"/>
+                <Entry x:Name="txtPass" Placeholder="Contraseña" IsPassword="True" TextColor="white" PlaceholderColor="#b2bec3" Text="{Binding Password}"/>
 
 
 
                 <Button VerticalOptions="Center" Text="Registrar" BackgroundColor="#301B3F" TextColor="White" CornerRadius="50" 
                   
-                        Command="{Binding RegisterCommand}"
+                        Command="{Binding SignUpCommand}"
                     />
 
                 <Button Text="¿Ya tienes cuenta? Iniciar sesión" TextColor="#ffbe00" BackgroundColor="Transparent" WidthRequest="150" FontSize="11" HeightRequest="45" 
                         CornerRadius="23" HorizontalOptions="Center" 
-                    Clicked="Iniciar_Clicked"
+                    Command="{Binding SignInCommand}"
                     
                     />
 

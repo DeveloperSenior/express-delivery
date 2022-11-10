@@ -1,37 +1,22 @@
-﻿using System;
+﻿using ExpressDelivery.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ExpressDelivery.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Menu : FlyoutPage
+    public partial class Menu : Shell
     {
         public Menu()
         {
             InitializeComponent();
-            FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
+            BindingContext = new SingInViewModel();
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = e.SelectedItem as MenuFlyoutMenuItem;
-            if (item == null)
-                return;
-
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
-
-            /*Detail = new NavigationPage(page);*/
-             Navigation.PushAsync(page);
-            IsPresented = false;
-
-            FlyoutPage.ListView.SelectedItem = null;
-        }
     }
 }

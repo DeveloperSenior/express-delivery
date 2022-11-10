@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:ExpressDelivery.Views"
              x:Class="ExpressDelivery.Views.MainPage"
              x:Name="currentPage"
-             Title="{Binding User.Address}">
+             Title="{Binding UserSession.Address}">
 
     <ContentPage.BindingContext>
         <vm:MainViewModel x:Name="vm" />
@@ -48,7 +48,7 @@
                 <DataTemplate>
                     <StackLayout  HorizontalOptions="Center" Spacing="30" >
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateCommand,Source={x:Reference currentPage}}" CommandParameter="{Binding .}"/>
+                            <TapGestureRecognizer Command="{Binding NavigateCommand,Source={x:Reference vm}}" CommandParameter="{Binding .}"/>
                         </StackLayout.GestureRecognizers>
                         <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
                             <Ellipse Stroke="{DynamicResource GradientBoxViewColorOffSet2}" StrokeThickness="2" Aspect="Fill">
@@ -76,7 +76,6 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid ColumnDefinitions="Auto, Auto" ColumnSpacing="15">
-                                <Rectangle Fill="{DynamicResource GradientBoxViewColorOffSet2}" VerticalOptions="Center" WidthRequest="87" HeightRequest="40"/>
                                 <Image Source="{Binding Image}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <StackLayout Grid.Column="1" Spacing="5" WidthRequest="115">
                                     <Label Text="{Binding Name}" TextColor="{DynamicResource GradientBoxViewColorOffSet2}" FontSize="12" FontAttributes="Bold" />

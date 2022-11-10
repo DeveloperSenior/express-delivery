@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExpressDelivery.Views.SingInSingUp.SingInView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ExpressDelivery.ViewModels" 
+             x:DataType="viewmodels:SingInViewModel"
+             x:Class="ExpressDelivery.Views.SingInView">
 
 
     <ContentPage.Content>
@@ -18,26 +20,25 @@
                 </BoxView.Background>
             </BoxView>
             <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,-110,0,0" Spacing="30">
-                <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
-                    <Ellipse  Aspect="Fill"/>
-                    <Image x:Name="BannerImg" Source="https://i.ibb.co/q1QCnxR/LogoED.png" HeightRequest="195" WidthRequest="195" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Grid  WidthRequest="300" HorizontalOptions="Center" >
+
+                    <Image x:Name="BannerImg" Source="https://i.ibb.co/q1QCnxR/LogoED.png" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
 
 
 
-                <Entry x:Name="txtID" Placeholder="Documento" TextColor="white" PlaceholderColor="#b2bec3"
-                  Text="{Binding IDTxt}"     />
+                <Entry x:Name="txtID" Placeholder="E-mail" TextColor="white" PlaceholderColor="#b2bec3"
+                  Text="{Binding Email}"     />
 
                 <Entry x:Name="txtPass" Placeholder="Contraseña" IsPassword="True" TextColor="white" PlaceholderColor="#b2bec3"
-                 Text="{Binding PassTxt}"  />
+                 Text="{Binding Password}"  />
 
                 <Button VerticalOptions="Center" Text="Ingresar" BackgroundColor="#301B3F" TextColor="White" CornerRadius="50" 
-                    Command="{Binding SingInCommand}"
+                    Command="{Binding SignInCommand}"
                     />
                 <Button Text="¿Aún no tienes cuenta? Registrarse" TextColor="#ffbe00" BackgroundColor="Transparent" WidthRequest="150" FontSize="11" HeightRequest="45" 
                         CornerRadius="23" HorizontalOptions="Center" 
-                    Clicked="SingUp_Clicked"
-                    
+                    Command="{Binding SignUpCommand}"
                     />
 
             </StackLayout>
